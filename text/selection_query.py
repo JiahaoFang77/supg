@@ -17,13 +17,13 @@ def query_syntax(query):
         return {
             "table_name": table_name,
             "filter_predicate": int(filter_predicate),
-            "s": int(o),
+            "ORACLE LIMIT": int(o),
             "proxy_estimates": proxy_estimates,
             "target": float(t),
             "delta": float(1- float(p))
         }
     else:
-        return "Invalid query"
+        return "Query Invalid!"
 
 # 3.2 Probabilistic Guarantees
 def calculatePR(record, record_accurate):

@@ -22,16 +22,16 @@ def main(query):
 
     n_records = 1000
 
-    record = supg_query(n_records, A, O, query['s'], query['target'], query['delta'], query['proxy_estimates'])
-    record.sort()
-    record_accurate = [i for i in range(n_records) if O[i] == 1]
-    calculatePR(record, record_accurate) 
+    # record = supg_query(n_records, A, O, query['ORACLE LIMIT'], query['target'], query['delta'], query['proxy_estimates'])
+    # record.sort()
+    # record_accurate = [i for i in range(n_records) if O[i] == 1]
+    # calculatePR(record, record_accurate) 
 
     precisions = []
     recalls = []
 
     for i in range(40):
-        record = supg_query(n_records, A, O, query['s'], query['target'], query['delta'], query['proxy_estimates'])
+        record = supg_query(n_records, A, O, query['ORACLE LIMIT'], query['target'], query['delta'], query['proxy_estimates'])
         record.sort()
         record_accurate = [i for i in range(n_records) if O[i] == 1]
         precision, recall = calculatePR(record, record_accurate)
