@@ -33,7 +33,7 @@ def main(query):
     for i in range(40):
         record = supg_query(n_records, A, O, query['ORACLE LIMIT'], query['target'], query['delta'], query['proxy_estimates'])
         record.sort()
-        record_accurate = [i for i in range(n_records) if O[i] == 1]
+        record_accurate = [j for j in range(n_records) if O[j] == 1]
         precision, recall = calculatePR(record, record_accurate)
         precisions.append(precision)
         recalls.append(recall)
@@ -51,7 +51,7 @@ def main(query):
     plt.xlabel('Trial times')
     plt.ylabel(measures_name)
     plt.title(f'{measures_name} v.s. Trial Times with a {measures_name.lower()} target of 95%')
-    plt.xticks(x_values, [str(i) for i in x_values])
+    plt.xticks(x_values, [str(k) for k in x_values])
     plt.show()
 
 if __name__ == "__main__":

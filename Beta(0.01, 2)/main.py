@@ -51,7 +51,7 @@ def main(query):
     plt.xlabel('Trial times')
     plt.ylabel(measures_name)
     plt.title(f'{measures_name} v.s. Trial Times with a {measures_name.lower()} target of 95%')
-    plt.xticks(x_values, [str(i) for i in x_values])
+    plt.xticks(x_values, [str(k) for k in x_values])
     plt.show()
 
 if __name__ == "__main__":
